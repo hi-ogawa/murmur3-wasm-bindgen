@@ -3,14 +3,6 @@
 version = 3
 
 [[package]]
-name = "argon2_wasm_bindgen"
-version = "0.0.0"
-dependencies = [
- "murmur3",
- "wasm-bindgen",
-]
-
-[[package]]
 name = "bumpalo"
 version = "3.13.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -33,6 +25,14 @@ name = "murmur3"
 version = "0.5.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "9252111cf132ba0929b6f8e030cac2a24b507f3a4d6db6fb2896f27b354c714b"
+
+[[package]]
+name = "murmur3_wasm_bindgen"
+version = "0.0.0"
+dependencies = [
+ "murmur3",
+ "wasm-bindgen",
+]
 
 [[package]]
 name = "once_cell"

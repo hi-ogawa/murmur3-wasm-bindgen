@@ -29,7 +29,7 @@
 		"dist/*"
 	],
 	"scripts": {
-		"clean": "rm -rf pkg dist",
+		"clean": "rm -rf pkg dist target",
 		"build": "pnpm run --seq /^build:/",
 		"build:wasm": "wasm-pack build --target web --out-name index ${BUILD_TYPE:---release}",
 		"build:fix-pkg": "rm -f pkg/package.json pkg/.gitignore pkg/README.md",
