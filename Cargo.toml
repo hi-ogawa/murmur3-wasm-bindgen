@@ -1,5 +1,5 @@
 [package]
-name = "argon2_wasm_bindgen"
+name = "murmur3_wasm_bindgen"
 version = "0.0.0"
 edition = "2021"
 

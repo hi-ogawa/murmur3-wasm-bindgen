@@ -17,4 +17,3 @@ jobs:
       - run: pnpm build
       - run: pnpm tsc
       - run: pnpm test
-      - run: npx typedoc
