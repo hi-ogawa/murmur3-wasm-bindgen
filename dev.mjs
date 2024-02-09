@@ -1,6 +1,6 @@
 /*
 node dev.mjs | tee dev.log
-cargo expand | tee cargo-expand.log
+cargo expand | tee cargo-expand.log.rs
 */
 
 import fs from "node:fs";
