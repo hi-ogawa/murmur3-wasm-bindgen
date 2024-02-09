@@ -1,40 +1,28 @@
-// node dev.mjs
+// node dev.mjs |& tee dev.log
 
 import fs from "node:fs";
 
-const wasmFile = "./pkg/index_bg.wasm";
-const data = await fs.promises.readFile(wasmFile);
-const mod = await WebAssembly.compile(data);
-const modImports = WebAssembly.Module.imports(mod);
-const modExports = WebAssembly.Module.exports(mod);
+/**
+ *
+ * @param {string} wasmFile
+ */
+async function parse(wasmFile) {
+	const data = await fs.promises.readFile(wasmFile);
+	const module = await WebAssembly.compile(data);
+	const imports = WebAssembly.Module.imports(module);
+	const exports = WebAssembly.Module.exports(module);
 
-console.log({
-	mod,
-	modImports,
-	modExports,
-});
+	return {
+		module,
+		imports,
+		exports,
+	};
+}
 
-// {
-//   mod: Module [WebAssembly.Module] {},
-//   modImports: [
-//     {
-//       module: 'wbg',
-//       name: '__wbindgen_copy_to_typed_array',
-//       kind: 'function'
-//     },
-//     { module: 'wbg', name: '__wbindgen_error_new', kind: 'function' },
-//     {
-//       module: 'wbg',
-//       name: '__wbindgen_object_drop_ref',
-//       kind: 'function'
-//     }
-//   ],
-//   modExports: [
-//     { name: 'memory', kind: 'memory' },
-//     { name: 'murmur3_32', kind: 'function' },
-//     { name: 'murmur3_x64_128', kind: 'function' },
-//     { name: 'murmur3_x86_128', kind: 'function' },
-//     { name: '__wbindgen_add_to_stack_pointer', kind: 'function' },
-//     { name: '__wbindgen_malloc', kind: 'function' }
-//   ]
-// }
+// wasm-bindgen modifies imports/exports to fit the target environment (e.g. bundler, web, ...)
+for (const wasmFile of [
+	"./target/wasm32-unknown-unknown/release/murmur3_wasm_bindgen.wasm",
+	"./pkg/index_bg.wasm",
+]) {
+	console.log(wasmFile, await parse(wasmFile));
+}
