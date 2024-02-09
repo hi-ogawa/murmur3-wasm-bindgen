@@ -1,0 +1,78 @@
+./target/wasm32-unknown-unknown/release/murmur3_wasm_bindgen.wasm {
+  module: Module [WebAssembly.Module] {},
+  imports: [
+    {
+      module: '__wbindgen_placeholder__',
+      name: '__wbindgen_error_new',
+      kind: 'function'
+    },
+    {
+      module: '__wbindgen_placeholder__',
+      name: '__wbindgen_describe',
+      kind: 'function'
+    },
+    {
+      module: '__wbindgen_placeholder__',
+      name: '__wbindgen_copy_to_typed_array',
+      kind: 'function'
+    },
+    {
+      module: '__wbindgen_placeholder__',
+      name: '__wbindgen_object_drop_ref',
+      kind: 'function'
+    },
+    {
+      module: '__wbindgen_externref_xform__',
+      name: '__wbindgen_externref_table_grow',
+      kind: 'function'
+    },
+    {
+      module: '__wbindgen_externref_xform__',
+      name: '__wbindgen_externref_table_set_null',
+      kind: 'function'
+    }
+  ],
+  exports: [
+    { name: 'memory', kind: 'memory' },
+    { name: 'murmur3_32', kind: 'function' },
+    { name: '__wbindgen_describe_murmur3_32', kind: 'function' },
+    { name: 'murmur3_x64_128', kind: 'function' },
+    { name: '__wbindgen_describe_murmur3_x64_128', kind: 'function' },
+    { name: 'murmur3_x86_128', kind: 'function' },
+    { name: '__wbindgen_describe_murmur3_x86_128', kind: 'function' },
+    { name: '__wbindgen_exn_store', kind: 'function' },
+    { name: '__externref_table_alloc', kind: 'function' },
+    { name: '__externref_table_dealloc', kind: 'function' },
+    { name: '__externref_drop_slice', kind: 'function' },
+    { name: '__externref_heap_live_count', kind: 'function' },
+    { name: '__wbindgen_malloc', kind: 'function' },
+    { name: '__wbindgen_realloc', kind: 'function' },
+    { name: '__wbindgen_free', kind: 'function' },
+    { name: '__data_end', kind: 'global' },
+    { name: '__heap_base', kind: 'global' }
+  ]
+}
+./pkg/index_bg.wasm {
+  module: Module [WebAssembly.Module] {},
+  imports: [
+    { module: 'wbg', name: '__wbindgen_error_new', kind: 'function' },
+    {
+      module: 'wbg',
+      name: '__wbindgen_copy_to_typed_array',
+      kind: 'function'
+    },
+    {
+      module: 'wbg',
+      name: '__wbindgen_object_drop_ref',
+      kind: 'function'
+    }
+  ],
+  exports: [
+    { name: 'memory', kind: 'memory' },
+    { name: 'murmur3_32', kind: 'function' },
+    { name: 'murmur3_x64_128', kind: 'function' },
+    { name: 'murmur3_x86_128', kind: 'function' },
+    { name: '__wbindgen_add_to_stack_pointer', kind: 'function' },
+    { name: '__wbindgen_malloc', kind: 'function' }
+  ]
+}
